@@ -1,10 +1,13 @@
-import "reflect-metadata";
 import express from "express";
-import dotenv from "dotenv";
+import "reflect-metadata";
+import { DBConnection } from "@/connections";
+import { checkScreenshotsDir } from "@/constants";
 import cron from "node-cron";
-import { DBConnection } from "./connections/dataSource";
-import { checkScreenshotsDir } from "./constants";
-import { takeScreenshot } from "./cronjobs";
+import { takeScreenshot } from "@/cronjobs";
+import cors from "cors";
+import dotenv from "dotenv";
+import monitoringDataRouter from "routes/monitoringDataRoute";
+import screenshotsRouter from "routes/screenshotsRoute";
 
 dotenv.config();
 checkScreenshotsDir();
@@ -23,6 +26,11 @@ dataSource
 
 const app = express();
 app.use(express.json());
+
+app.use(cors());
+
+app.use("/monitoring-data", monitoringDataRouter);
+app.use("/screenshots", screenshotsRouter);
 
 cron.schedule(`*/${process.env.INTERVAL_IN_MINUTES || 1} * * * *`, takeScreenshot);
 
