@@ -2,6 +2,8 @@
 ## Run instructions
 ### Backend Project
 
+I use **Node v21.7.3**
+
 Run
 
 ```
@@ -11,9 +13,9 @@ npm install
 
 Set up database:
 
-1. Set up MySQL (https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/).
-2. Create database
+1. Set up MySQL 
     - Manually:
+        - [Install MySQL](https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/).
         - Log in to the MySQL server using a user account
 
         ```
@@ -32,7 +34,7 @@ Set up database:
 
 Copy **.env.example** in **.env** and set:
 
-* **PORT** - By default it is 4000, but you can change it
+* **PORT** - By default it is **4000**, but you can change it
 * **BASE_API_URL** - Base API Url for taking screenshots, now it depends on your port, so if you change your port, change this variable as well
 * **SCREENSHOTS_DIRECTORY** - The name of the directory where we will store our screenshots. By default, it is **"screenshots "**, but you can change it if you wish.
 * **APP_URL** - Link to the application we want to monitor. You can change it.
@@ -43,7 +45,7 @@ Copy **.env.example** in **.env** and set:
 * **DB_PASSWORD**
 * **DB_DATABASE**
 * **DB_SYNCHRONIZE** - Set this variable to **true** if you want to update the table automatically (Recommend to set true, at least for the first startup)
-* **INTERVAL_IN_MINUTES** - Interval in minutes for cronjob to take screenshots.
+* **INTERVAL_IN_MINUTES** - Interval in minutes for cronjob to take screenshots. Default is **1** to speed up functionality testing.
 
 Run
 ```npm start```
