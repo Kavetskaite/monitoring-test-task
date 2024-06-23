@@ -62,6 +62,8 @@ npm install
 Copy **.env.example** in **.env** and set 
 * **REACT_APP_API_HOST** - equal to **BASE_API_URL** from server .env file
 
+Run
+
 ```npm run start```
 
 # Improvements
