@@ -13,19 +13,19 @@ Set up database:
 
 1. Set up MySQL (https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/).
 2. Create database
-    _ Manually:
-        _Log in to the MySQL server using a user account
+    - Manually:
+        - Log in to the MySQL server using a user account
 
         ```
         mysql -u root -p
         ```
-        Create new Database
+        - Create new Database
         
         ```
         CREATE DATABASE [YOUR_DATABASE_NAME];
         ```
-    _ Or if you have a customized **Docker**
-        _Run 
+    - Or if you have a customized **Docker**
+        - Run 
         ```
         docker run --name=[YOUR_DOCKER_CONTAINER_NAME] --restart unless-stopped -p [YOUR_HOST]:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -e MYSQL_USER=[YOUR_USER_NAME] -e MYSQL_PASSWORD=[YOUR_PASSWORD] -e MYSQL_DATABASE=[YOUR_DATABASE_NAME] -d mysql/mysql-server:8.0 mysqld --default-authentication-plugin=mysql_native_password
         ```
