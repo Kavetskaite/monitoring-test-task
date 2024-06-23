@@ -31,18 +31,19 @@ Set up database:
         ```
 
 Copy **.env.example** in **.env** and set:
-    * **PORT** - By default it is 4000, but you can change it
-    * **BASE_API_URL** - Base API Url for taking screenshots, now it depends on your port, so if you change your port, change this variable as well
-    * **SCREENSHOTS_DIRECTORY** - The name of the directory where we will store our screenshots. By default, it is **"screenshots "**, but you can change it if you wish.
-    * **APP_URL** - Link to the application we want to monitor. You can change it.
+
+* **PORT** - By default it is 4000, but you can change it
+* **BASE_API_URL** - Base API Url for taking screenshots, now it depends on your port, so if you change your port, change this variable as well
+* **SCREENSHOTS_DIRECTORY** - The name of the directory where we will store our screenshots. By default, it is **"screenshots "**, but you can change it if you wish.
+* **APP_URL** - Link to the application we want to monitor. You can change it.
     Set enviroment variable to connect to the database:
-    * **DB_HOST**
-    * **DB_PORT**
-    * **DB_USERNAME**
-    * **DB_PASSWORD**
-    * **DB_DATABASE**
-    * **DB_SYNCHRONIZE** - Set this variable to **true** if you want to update the table automatically (Recommend to set true, at least for the first startup)
-    * **INTERVAL_IN_MINUTES** - Interval in minutes for cronjob to take screenshots.
+* **DB_HOST**
+* **DB_PORT**
+* **DB_USERNAME**
+* **DB_PASSWORD**
+* **DB_DATABASE**
+* **DB_SYNCHRONIZE** - Set this variable to **true** if you want to update the table automatically (Recommend to set true, at least for the first startup)
+* **INTERVAL_IN_MINUTES** - Interval in minutes for cronjob to take screenshots.
 
 Run
 ```npm start```
