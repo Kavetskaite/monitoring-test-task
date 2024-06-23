@@ -76,3 +76,6 @@ But later I would use **AWS S3** to save screenshots. Since we will have a large
 
 ## 3. Using Docker to containerize an application. 
 In order to avoid conflicts on different devices with different environments, it is better to create a docker container that will work the same on all devices regardless of the environment.
+
+## 4. Testing.
+In the future, I would add e2e test (for example, **Cypress**) or unit tests (for example, **Jest**) for testing basic functionality.
