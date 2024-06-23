@@ -4,7 +4,6 @@ export class DBConnection {
   static connection?: DataSource;
 
   static getConnection() {
-    console.log(process.env.DB_HOST);
     if (!this.connection) {
       this.connection = new DataSource({
         type: "mysql",
