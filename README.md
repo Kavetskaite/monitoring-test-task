@@ -1,52 +1,65 @@
 # monitoring-test-task
 ## Run instructions
-### Client Project
-
-Run
-
-```cd client```
-```npm install```
-
-Copy **.env.example** in **.env** and set **REACT_APP_API_HOST**
-
-```npm run start```
-
 ### Backend Project
 
 Run
 
-```cd server```
-```npm install```
+```
+cd server
+npm install
+```
 
 Set up database:
 
 1. Set up MySQL (https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/).
 2. Create database
-    2.1. Manually:
-        Log in to the MySQL server using a user account
-        ```mysql -u root -p```
+    _ Manually:
+        _Log in to the MySQL server using a user account
+
+        ```
+        mysql -u root -p
+        ```
         Create new Database
-        ```CREATE DATABASE [YOUR_DATABASE_NAME];```
-    2.2. Or if you have a customized **Docker**
-        Run 
-        ```docker run --name=[YOUR_DOCKER_CONTAINER_NAME] --restart unless-stopped -p [YOUR_HOST]:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -e MYSQL_USER=[YOUR_USER_NAME] -e MYSQL_PASSWORD=[YOUR_PASSWORD] -e MYSQL_DATABASE=[YOUR_DATABASE_NAME] -d mysql/mysql-server:8.0 mysqld --default-authentication-plugin=mysql_native_password```
+        
+        ```
+        CREATE DATABASE [YOUR_DATABASE_NAME];
+        ```
+    _ Or if you have a customized **Docker**
+        _Run 
+        ```
+        docker run --name=[YOUR_DOCKER_CONTAINER_NAME] --restart unless-stopped -p [YOUR_HOST]:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -e MYSQL_USER=[YOUR_USER_NAME] -e MYSQL_PASSWORD=[YOUR_PASSWORD] -e MYSQL_DATABASE=[YOUR_DATABASE_NAME] -d mysql/mysql-server:8.0 mysqld --default-authentication-plugin=mysql_native_password
+        ```
 
 Copy **.env.example** in **.env** and set:
-    **PORT** - By default it is 4000, but you can change it
-    **BASE_API_URL** - Base API Url for taking screenshots, now it depends on your port, so if you change your port, change this variable as well
-    **SCREENSHOTS_DIRECTORY** - The name of the directory where we will store our screenshots. By default, it is **"screenshots "**, but you can change it if you wish.
-    **APP_URL** - Link to the application we want to monitor. You can change it.
+    * **PORT** - By default it is 4000, but you can change it
+    * **BASE_API_URL** - Base API Url for taking screenshots, now it depends on your port, so if you change your port, change this variable as well
+    * **SCREENSHOTS_DIRECTORY** - The name of the directory where we will store our screenshots. By default, it is **"screenshots "**, but you can change it if you wish.
+    * **APP_URL** - Link to the application we want to monitor. You can change it.
     Set enviroment variable to connect to the database:
-    **DB_HOST**
-    **DB_PORT**
-    **DB_USERNAME**
-    **DB_PASSWORD**
-    **DB_DATABASE**
-    **DB_SYNCHRONIZE** - Set this variable to **true** if you want to update the table automatically (Recommend to set true, at least for the first startup)
-    **INTERVAL_IN_MINUTES** - Interval in minutes for cronjob to take screenshots.
+    * **DB_HOST**
+    * **DB_PORT**
+    * **DB_USERNAME**
+    * **DB_PASSWORD**
+    * **DB_DATABASE**
+    * **DB_SYNCHRONIZE** - Set this variable to **true** if you want to update the table automatically (Recommend to set true, at least for the first startup)
+    * **INTERVAL_IN_MINUTES** - Interval in minutes for cronjob to take screenshots.
 
 Run
 ```npm start```
+
+### Client Project
+
+Run
+
+```
+cd client
+npm install
+```
+
+Copy **.env.example** in **.env** and set 
+* **REACT_APP_API_HOST** - equal to **BASE_API_URL** from server .env file
+
+```npm run start```
 
 # Improvements
 
